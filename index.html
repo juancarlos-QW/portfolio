@@ -1,181 +1,527 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Juan Carlos — Desenvolvedor Front-End. Crio interfaces modernas, rápidas e responsivas com HTML, CSS, Tailwind e JavaScript.">
+    <meta name="theme-color" content="#05070e">
+
+    <meta property="og:title" content="Juan Carlos | Desenvolvedor Front-End">
+    <meta property="og:description"
+        content="Portfólio de Juan Carlos — interfaces modernas, rápidas e responsivas.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/carlos.png">
+
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%233b82f6'/><text x='50' y='68' font-size='48' font-weight='bold' font-family='sans-serif' fill='white' text-anchor='middle'>JC</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.min.css">
     <link href="./output.css" rel="stylesheet">
-    <title>Portfolio | Carlos</title>
+
+    <title>Juan Carlos | Desenvolvedor Front-End</title>
 </head>
 
-<body class="bg-gray-900">
-    <header class="flex flex-col md:flex-row md:justify-between items-center p-6 px-20 gap-4">
-        <h2 class="text-3xl font-bold font-serif m-3 text-white">Meu Portfolio</h2>
+<body class="bg-base font-sans text-slate-300 antialiased">
 
-        <nav class="flex flex-wrap justify-center gap-8 font-semibold">
-            <a class="relative text-white transition-colors duration-300 hover:text-blue-300
-         after:absolute after:left-1/2 after:-translate-x-1/2
-         after:-bottom-1 after:h-[2px]
-         after:w-0 after:bg-blue-500
-         after:transition-all after:duration-300
-         hover:after:w-full" href="#">Home</a>
-            <a class="relative text-white transition-colors duration-300 hover:text-blue-300
-         after:absolute after:left-1/2 after:-translate-x-1/2
-         after:-bottom-1 after:h-[2px]
-         after:w-0 after:bg-blue-500
-         after:transition-all after:duration-300
-         hover:after:w-full" href="#sobre">Sobre</a>
-            <a class="relative text-white transition-colors duration-300 hover:text-blue-300
-         after:absolute after:left-1/2 after:-translate-x-1/2
-         after:-bottom-1 after:h-[2px]
-         after:w-0 after:bg-blue-500
-         after:transition-all after:duration-300
-         hover:after:w-full" href="#projetos">Projetos</a>
-            <a class="relative text-white transition-colors duration-300 hover:text-blue-300
-         after:absolute after:left-1/2 after:-translate-x-1/2
-         after:-bottom-1 after:h-[2px]
-         after:w-0 after:bg-blue-500
-         after:transition-all after:duration-300
-         hover:after:w-full" href="#contato">Contato</a>
+    <!-- Fundo decorativo: grade + brilhos radiais -->
+    <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
+        <div class="absolute inset-0 bg-grid"></div>
+        <div class="absolute -top-40 left-1/2 h-[38rem] w-[38rem] -translate-x-1/2 rounded-full bg-blue-600/20 blur-[130px]"></div>
+        <div class="absolute -right-32 top-1/3 h-[30rem] w-[30rem] rounded-full bg-cyan-500/10 blur-[130px]"></div>
+        <div class="absolute -left-40 bottom-0 h-[30rem] w-[30rem] rounded-full bg-indigo-600/10 blur-[130px]"></div>
+    </div>
+
+    <a href="#hero"
+        class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-blue-600 focus:px-4 focus:py-2 focus:text-white">Pular
+        para o conteúdo</a>
+
+    <!-- ================= HEADER ================= -->
+    <header id="header"
+        class="fixed inset-x-0 top-0 z-40 border-b border-white/5 bg-base/70 backdrop-blur-xl transition-shadow duration-300">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+
+            <a href="#hero" class="group flex items-center gap-2.5">
+                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 font-display text-sm font-bold text-white shadow-glow-sm">JC</span>
+                <span class="font-display text-lg font-bold text-white">Juan<span class="text-blue-400">.</span>dev</span>
+            </a>
+
+            <nav class="hidden items-center gap-8 text-sm font-medium md:flex" aria-label="Navegação principal">
+                <a class="nav-link relative text-slate-400 transition-colors duration-300 hover:text-white after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-blue-400 after:transition-all after:duration-300 hover:after:w-full"
+                    href="#hero">Início</a>
+                <a class="nav-link relative text-slate-400 transition-colors duration-300 hover:text-white after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-blue-400 after:transition-all after:duration-300 hover:after:w-full"
+                    href="#projetos">Projetos</a>
+                <a class="nav-link relative text-slate-400 transition-colors duration-300 hover:text-white after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-blue-400 after:transition-all after:duration-300 hover:after:w-full"
+                    href="#skills">Skills</a>
+                <a class="nav-link relative text-slate-400 transition-colors duration-300 hover:text-white after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-blue-400 after:transition-all after:duration-300 hover:after:w-full"
+                    href="#sobre">Sobre</a>
+                <a href="#contato"
+                    class="rounded-full border border-blue-500/40 bg-blue-500/10 px-5 py-2 text-blue-300 transition-all duration-300 hover:border-blue-400 hover:bg-blue-500/20 hover:text-white">Contato</a>
+            </nav>
+
+            <button id="menu-btn" type="button"
+                class="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-2xl text-white transition-colors hover:bg-white/5 md:hidden"
+                aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+                <i id="menu-icon" class="ri-menu-line"></i>
+            </button>
+        </div>
+
+        <!-- Menu mobile -->
+        <nav id="mobile-menu" class="hidden animate-fade-down border-t border-white/5 bg-base/95 px-6 py-4 md:hidden"
+            aria-label="Navegação mobile">
+            <ul class="flex flex-col gap-1 text-base font-medium">
+                <li><a class="mobile-link block rounded-lg px-3 py-3 text-slate-300 transition-colors hover:bg-white/5 hover:text-white" href="#hero">Início</a></li>
+                <li><a class="mobile-link block rounded-lg px-3 py-3 text-slate-300 transition-colors hover:bg-white/5 hover:text-white" href="#projetos">Projetos</a></li>
+                <li><a class="mobile-link block rounded-lg px-3 py-3 text-slate-300 transition-colors hover:bg-white/5 hover:text-white" href="#skills">Skills</a></li>
+                <li><a class="mobile-link block rounded-lg px-3 py-3 text-slate-300 transition-colors hover:bg-white/5 hover:text-white" href="#sobre">Sobre</a></li>
+                <li><a class="mobile-link block rounded-lg px-3 py-3 text-blue-300 transition-colors hover:bg-white/5 hover:text-white" href="#contato">Contato</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section class="flex flex-col md:flex-row items-center justify-center min-h-[85vh] gap-10 md:gap-28 px-9">
-        <div class="">
-            <h1 class="text-4xl md:text-8xl font-bold font-sans text-white ">Olá, eu sou <span
-                    class="text-blue-500">Juan
-                    Carlos.</span></h1>
-            <p class="text-gray-400 p-5 max-w-3xl text-lg leading-relaxed m-5">Desenvolvedor Front-End especializado em
-                criar interfaces modernas, rápidas e
-                responsivas. Gosto de
-                transformar designs em experiências funcionais, escrevendo código limpo e buscando sempre evoluir como
-                profissional.</p>
+    <main>
+        <!-- ================= HERO ================= -->
+        <section id="hero" class="relative flex min-h-screen items-center px-6 pb-20 pt-28 lg:px-10">
+            <div class="mx-auto grid w-full max-w-7xl items-center gap-14 md:grid-cols-2 md:gap-20">
 
-            <a class="inline-block text-white bg-blue-800 p-5 my-3 rounded-2xl mt-6 transform duration-500 hover:scale-110 hover:bg-blue-950"
-                href="#projetos">Ver Projeto</a>
+                <div class="order-2 text-center md:order-1 md:text-left">
+                    <span class="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-4 py-1.5 text-xs font-medium text-emerald-300">
+                        <span class="relative flex h-2 w-2">
+                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+                        </span>
+                        Disponível para novas oportunidades
+                    </span>
 
+                    <h1 class="mt-6 font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+                        Olá, eu sou
+                        <span class="block bg-gradient-to-r from-blue-400 via-sky-400 to-cyan-300 bg-clip-text text-transparent">
+                            Juan Carlos.
+                        </span>
+                    </h1>
 
-        </div>
+                    <p class="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-400 md:mx-0 lg:text-lg">
+                        Desenvolvedor <strong class="font-semibold text-slate-200">Front-End</strong> especializado em
+                        criar interfaces modernas, rápidas e responsivas. Transformo designs em experiências
+                        funcionais, escrevendo código limpo e buscando sempre evoluir como profissional.
+                    </p>
 
-        <div>
-            <img class="w-56 md:w-80 rounded-3xl" src="assets/carlos.png" alt="foto carlos">
-        </div>
+                    <div class="mt-9 flex flex-wrap items-center justify-center gap-4 md:justify-start">
+                        <a href="#projetos"
+                            class="group inline-flex items-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 font-semibold text-white shadow-glow transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-500">
+                            Ver projetos
+                            <i class="ri-arrow-right-line transition-transform duration-300 group-hover:translate-x-1"></i>
+                        </a>
+                        <a href="assets/Juan-Carlos-CV.pdf" download
+                            class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 font-semibold text-slate-200 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 hover:text-white">
+                            <i class="ri-download-2-line"></i>
+                            Baixar CV
+                        </a>
+                    </div>
 
-    </section>
+                    <div class="mt-10 flex items-center justify-center gap-3 md:justify-start">
+                        <a href="https://github.com/juancarlos-QW" target="_blank" rel="noopener"
+                            class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 text-xl text-slate-400 transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-white"
+                            aria-label="GitHub"><i class="ri-github-fill"></i></a>
+                        <a href="https://www.linkedin.com/in/carlos-guaregua/" target="_blank" rel="noopener"
+                            class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 text-xl text-slate-400 transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-white"
+                            aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                        <a href="https://wa.me/5554996238578" target="_blank" rel="noopener"
+                            class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 text-xl text-slate-400 transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-white"
+                            aria-label="WhatsApp"><i class="ri-whatsapp-line"></i></a>
+                        <a href="mailto:juancarlosguaregua274@gmail.com"
+                            class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 text-xl text-slate-400 transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-white"
+                            aria-label="E-mail"><i class="ri-mail-line"></i></a>
+                    </div>
+                </div>
 
-    <h2 id="projetos" class="text-white text-5xl font-bold p-4 m-4 text-center">Projetos</h2>
-
-    
-
-    <section
-        class="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 text-center p-8 md:p-12 px-12">
-
-        <article class="w-full bg-gray-950 rounded-xl inline-block transform duration-500 hover:scale-110">
-            <img class="w-full h-44 sm:h-52 md:h-56 object-cover rounded-t-xl" src="assets/pet-shop.png" alt="pet shop">
-
-            <div class="m-2 p-2">
-                <h3 class="font-bold text-blue-500 pt-2 text-xl overflow-hidden">Pet Shop</h3>
-                <p class="text-gray-400 p-3">Site desenvolvido para um Pet Shop com foco em um design moderno, navegação
-                    intuitiva e layout totalmente responsivo. O projeto foi construído utilizando HTML, CSS e
-                    JavaScript, proporcionando uma experiência agradável em diferentes dispositivos e reforçando minhas
-                    habilidades na criação de interfaces modernas.</p>
-                <a class=" text-blue-200 text-[17px] bg-blue-950 p-3 rounded-xl"
-                    href="https://pet-shop-eta-flax.vercel.app/">Ver Projetos <i
-                        class="ri-arrow-right-long-fill"></i></a>
+                <div class="order-1 flex justify-center md:order-2">
+                    <div class="relative animate-float">
+                        <div class="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-blue-600/30 to-cyan-400/20 blur-2xl"></div>
+                        <div class="relative rounded-[2rem] bg-gradient-to-br from-blue-500/60 via-white/10 to-cyan-400/40 p-[1.5px]">
+                            <img class="w-44 rounded-[2rem] object-cover sm:w-64 lg:w-80" src="assets/carlos.png"
+                                alt="Foto de Juan Carlos" width="320" height="320">
+                        </div>
+                    </div>
+                </div>
             </div>
-        </article>
 
-        <article class="w-full bg-gray-950 rounded-xl inline-block transform duration-500 hover:scale-110">
-            <img class="w-full h-44 sm:h-52 md:h-56 object-cover rounded-t-xl" src="assets/Tattoo.png" alt="Tattoo studio">
+            <a href="#projetos"
+                class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 text-slate-600 transition-colors hover:text-blue-400 lg:block"
+                aria-label="Rolar para projetos">
+                <i class="ri-arrow-down-line animate-bounce text-2xl"></i>
+            </a>
+        </section>
 
-            <div class="m-2 p-2">
-                <h3 class="font-bold text-blue-500 p-3 text-xl overflow-hidden">Tattoo Studio</h3>
-                <p class="text-gray-400 p-3 mb-2">Landing Page desenvolvida para um estúdio de tatuagem com visual moderno e
-                    identidade marcante. O projeto apresenta serviços, galeria de trabalhos e informações de contato,
-                    utilizando HTML, CSS e JavaScript, com foco em responsividade, organização e experiência do
-                    usuário.</p>
-                <a class=" text-blue-200 text-[17px] bg-blue-950 p-3 rounded-xl"
-                    href="https://tattoo-studio-fawn-three.vercel.app/">Ver Projetos <i
-                        class="ri-arrow-right-long-fill"></i></a>
+        <!-- ================= PROJETOS ================= -->
+        <section id="projetos" class="px-6 py-24 lg:px-10">
+            <div class="mx-auto max-w-7xl">
+
+                <div class="reveal mx-auto max-w-2xl text-center">
+                    <span class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">Portfólio</span>
+                    <h2 class="mt-3 font-display text-3xl font-bold text-white sm:text-4xl lg:text-5xl">Projetos em destaque</h2>
+                    <p class="mt-4 text-slate-400">Alguns dos trabalhos que desenvolvi para praticar e aprimorar minhas
+                        habilidades em front-end.</p>
+                </div>
+
+                <div class="mt-16 grid gap-8 sm:grid-cols-2">
+
+                    <!-- Card: StyleWear -->
+                    <article class="reveal group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-surface/60 shadow-card backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-blue-500/40 hover:shadow-glow">
+                        <div class="relative overflow-hidden">
+                            <img class="h-56 w-full object-cover object-top transition-transform duration-700 group-hover:scale-105 lg:h-64"
+                                src="assets/stylewear.png" alt="Captura de tela do e-commerce StyleWear" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent"></div>
+                        </div>
+
+                        <div class="flex flex-1 flex-col p-6">
+                            <h3 class="font-display text-xl font-bold text-white">StyleWear</h3>
+                            <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-400">
+                                E-commerce de moda urbana com catálogo de produtos, carrinho de compras, lista de
+                                favoritos, avaliações e painel administrativo. Meu projeto mais completo em
+                                JavaScript, com foco em interatividade e gerenciamento de estado na interface.
+                            </p>
+
+                            <ul class="mt-5 flex flex-wrap gap-2">
+                                <li class="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-400">HTML</li>
+                                <li class="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-400">CSS</li>
+                                <li class="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-400">JavaScript</li>
+                                <li class="rounded-md border border-blue-500/30 bg-blue-500/10 px-2.5 py-1 text-xs font-medium text-blue-300">E-commerce</li>
+                            </ul>
+
+                            <div class="mt-6 flex items-center gap-4 border-t border-white/5 pt-5">
+                                <a class="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-blue-400 transition-colors hover:text-blue-300"
+                                    href="https://stylewear-nine.vercel.app" target="_blank" rel="noopener">
+                                    Ver online
+                                    <i class="ri-arrow-right-up-line transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"></i>
+                                </a>
+                                <a class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 transition-colors hover:text-white"
+                                    href="https://github.com/juancarlos-QW/stylewear" target="_blank" rel="noopener">
+                                    <i class="ri-github-fill"></i> Código
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card: Pet Shop -->
+                    <article class="reveal group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-surface/60 shadow-card backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-blue-500/40 hover:shadow-glow">
+                        <div class="relative overflow-hidden">
+                            <img class="h-56 w-full object-cover object-top transition-transform duration-700 group-hover:scale-105 lg:h-64"
+                                src="assets/pet-shop.png" alt="Captura de tela do projeto Pet Shop" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent"></div>
+                        </div>
+
+                        <div class="flex flex-1 flex-col p-6">
+                            <h3 class="font-display text-xl font-bold text-white">Pet Shop</h3>
+                            <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-400">
+                                Site desenvolvido para um Pet Shop com foco em design moderno, navegação intuitiva e
+                                layout totalmente responsivo, proporcionando uma boa experiência em diferentes
+                                dispositivos.
+                            </p>
+
+                            <ul class="mt-5 flex flex-wrap gap-2">
+                                <li class="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-400">HTML</li>
+                                <li class="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-400">CSS</li>
+                                <li class="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-400">JavaScript</li>
+                            </ul>
+
+                            <div class="mt-6 flex items-center gap-4 border-t border-white/5 pt-5">
+                                <a class="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-blue-400 transition-colors hover:text-blue-300"
+                                    href="https://pet-shop-eta-flax.vercel.app/" target="_blank" rel="noopener">
+                                    Ver online
+                                    <i class="ri-arrow-right-up-line transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"></i>
+                                </a>
+                                <a class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 transition-colors hover:text-white"
+                                    href="https://github.com/juancarlos-QW/petshop-pro" target="_blank" rel="noopener">
+                                    <i class="ri-github-fill"></i> Código
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card: Tattoo Studio -->
+                    <article class="reveal group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-surface/60 shadow-card backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-blue-500/40 hover:shadow-glow">
+                        <div class="relative overflow-hidden">
+                            <img class="h-56 w-full object-cover object-top transition-transform duration-700 group-hover:scale-105 lg:h-64"
+                                src="assets/Tattoo.png" alt="Captura de tela do projeto Tattoo Studio" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent"></div>
+                        </div>
+
+                        <div class="flex flex-1 flex-col p-6">
+                            <h3 class="font-display text-xl font-bold text-white">Tattoo Studio</h3>
+                            <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-400">
+                                Landing page para um estúdio de tatuagem com visual moderno e identidade marcante.
+                                Apresenta serviços, galeria de trabalhos e contato, com foco em responsividade e
+                                experiência do usuário.
+                            </p>
+
+                            <ul class="mt-5 flex flex-wrap gap-2">
+                                <li class="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-400">HTML</li>
+                                <li class="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-400">CSS</li>
+                                <li class="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-400">JavaScript</li>
+                            </ul>
+
+                            <div class="mt-6 flex items-center gap-4 border-t border-white/5 pt-5">
+                                <a class="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-blue-400 transition-colors hover:text-blue-300"
+                                    href="https://tattoo-studio-fawn-three.vercel.app/" target="_blank" rel="noopener">
+                                    Ver online
+                                    <i class="ri-arrow-right-up-line transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"></i>
+                                </a>
+                                <a class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 transition-colors hover:text-white"
+                                    href="https://github.com/juancarlos-QW/tattoo-studio" target="_blank" rel="noopener">
+                                    <i class="ri-github-fill"></i> Código
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card: Gerador de Prompt -->
+                    <article class="reveal group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-surface/60 shadow-card backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-blue-500/40 hover:shadow-glow">
+                        <div class="relative overflow-hidden">
+                            <img class="h-56 w-full object-cover object-top transition-transform duration-700 group-hover:scale-105 lg:h-64"
+                                src="assets/projeto4.png" alt="Captura de tela do projeto Gerador de Prompt"
+                                loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent"></div>
+                        </div>
+
+                        <div class="flex flex-1 flex-col p-6">
+                            <h3 class="font-display text-xl font-bold text-white">Gerador de Prompt</h3>
+                            <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-400">
+                                Aplicação que auxilia usuários na criação de prompts para Inteligência Artificial.
+                                Criada para praticar lógica de programação, manipulação da interface e organização do
+                                código.
+                            </p>
+
+                            <ul class="mt-5 flex flex-wrap gap-2">
+                                <li class="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-400">HTML</li>
+                                <li class="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-400">CSS</li>
+                                <li class="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-400">JavaScript</li>
+                            </ul>
+
+                            <!-- TODO: trocar "#" pelos links reais deste projeto (deploy e repositório) -->
+                            <div class="mt-6 flex items-center gap-4 border-t border-white/5 pt-5">
+                                <a class="group/link inline-flex items-center gap-1.5 text-sm font-semibold text-blue-400 transition-colors hover:text-blue-300"
+                                    href="#">
+                                    Ver online
+                                    <i class="ri-arrow-right-up-line transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"></i>
+                                </a>
+                                <a class="inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 transition-colors hover:text-white"
+                                    href="#">
+                                    <i class="ri-github-fill"></i> Código
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
-        </article>
+        </section>
 
+        <!-- ================= SKILLS ================= -->
+        <section id="skills" class="px-6 py-24 lg:px-10">
+            <div class="mx-auto max-w-7xl">
 
-        <article class="w-full bg-gray-950 rounded-xl overflow-hidden inline-block transform duration-500 hover:scale-110">
-            <img class="w-full h-44 sm:h-52 md:h-56 object-cover rounded-t-xl" src="assets/projeto4.png" alt="Pronpt com IA">
+                <div class="reveal mx-auto max-w-2xl text-center">
+                    <span class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">Tecnologias</span>
+                    <h2 class="mt-3 font-display text-3xl font-bold text-white sm:text-4xl lg:text-5xl">Minhas skills</h2>
+                    <p class="mt-4 text-slate-400">As ferramentas que uso no dia a dia para construir interfaces.</p>
+                </div>
 
-            <div class="m-2 p-2">
-                <h3 class="font-bold text-blue-500 pt-2 text-xl">Gerador de Pronpt</h3>
-                <p class="text-gray-400 p-3">Aplicação desenvolvida para auxiliar usuários na criação de prompts para
-                    Inteligência Artificial. O projeto foi criado para praticar lógica de programação, manipulação da
-                    interface e organização do código, utilizando HTML, CSS e JavaScript, com foco em uma
-                    experiência simples e intuitiva.</p>
-                <a class=" text-blue-200 text-[17px] bg-blue-950 p-3 rounded-xl" href="">Ver Projetos <i
-                        class="ri-arrow-right-long-fill"></i></a>
+                <ul class="reveal mt-16 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+                    <li class="group flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-surface/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:bg-surface">
+                        <i class="ri-html5-fill text-4xl text-orange-500 transition-transform duration-300 group-hover:scale-110"></i>
+                        <span class="text-sm font-medium text-slate-300">HTML5</span>
+                    </li>
+                    <li class="group flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-surface/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:bg-surface">
+                        <i class="ri-css3-fill text-4xl text-blue-500 transition-transform duration-300 group-hover:scale-110"></i>
+                        <span class="text-sm font-medium text-slate-300">CSS3</span>
+                    </li>
+                    <li class="group flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-surface/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:bg-surface">
+                        <i class="ri-javascript-fill text-4xl text-yellow-400 transition-transform duration-300 group-hover:scale-110"></i>
+                        <span class="text-sm font-medium text-slate-300">JavaScript</span>
+                    </li>
+                    <li class="group flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-surface/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:bg-surface">
+                        <i class="ri-tailwind-css-fill text-4xl text-cyan-400 transition-transform duration-300 group-hover:scale-110"></i>
+                        <span class="text-sm font-medium text-slate-300">Tailwind</span>
+                    </li>
+                    <li class="group flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-surface/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:bg-surface">
+                        <i class="ri-git-branch-fill text-4xl text-red-500 transition-transform duration-300 group-hover:scale-110"></i>
+                        <span class="text-sm font-medium text-slate-300">Git</span>
+                    </li>
+                    <li class="group flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-surface/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:bg-surface">
+                        <i class="ri-github-fill text-4xl text-slate-200 transition-transform duration-300 group-hover:scale-110"></i>
+                        <span class="text-sm font-medium text-slate-300">GitHub</span>
+                    </li>
+                </ul>
             </div>
-        </article>
+        </section>
 
-    </section>
+        <!-- ================= SOBRE ================= -->
+        <section id="sobre" class="px-6 py-24 lg:px-10">
+            <div class="mx-auto max-w-7xl">
+                <div class="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
 
-    <div class="mt-12 pb-10">
-        <h2 class="text-white text-5xl font-bold text-center">Sobre Mim</h2>
-    </div>
+                    <div class="reveal">
+                        <span class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">Sobre mim</span>
+                        <h2 class="mt-3 font-display text-3xl font-bold leading-tight text-white sm:text-4xl">
+                            Desenvolvedor Front-End, apaixonado por criar soluções digitais
+                        </h2>
 
-    <section class="w-full flex flex-wrap flex-col items-center px-11">
-        <h3 id="sobre" class="text-white text-2xl font-semibold text-center p-2">Desenvolvedor Front end, Paixão em
-            criar soluções
-            digitais</h3>
+                        <div class="mt-6 space-y-5 leading-relaxed text-slate-400">
+                            <p>
+                                Olá! Sou Juan Carlos, desenvolvedor Front-End em transição de carreira, apaixonado por
+                                tecnologia e pela criação de interfaces modernas e responsivas. Desde criança, sempre
+                                tive curiosidade em entender como funcionavam os sites e a internet, o que despertou
+                                meu interesse pela programação.
+                            </p>
+                            <p>
+                                Atualmente, estudo HTML, CSS, Tailwind CSS e JavaScript, desenvolvendo projetos
+                                práticos para aprimorar minhas habilidades e evoluir constantemente. Meu objetivo é
+                                conquistar minha primeira oportunidade como desenvolvedor Front-End, contribuindo com
+                                dedicação, criatividade e vontade de aprender, criando soluções que ofereçam uma
+                                excelente experiência aos usuários.
+                            </p>
+                        </div>
 
-        <div class="flex gap-8 max-w-4xl px-8 p-3 mb-4 pt-3">
-            <p class="text-gray-400 text-xl"> Olá! Sou Juan Carlos, desenvolvedor Front-End em transição de carreira,
-                apaixonado
-                por tecnologia e pela criação de interfaces modernas e responsivas. Desde criança, sempre tive
-                curiosidade em entender como funcionavam os sites e a internet, o que despertou meu interesse pela
-                programação. <br>
+                        <a href="#contato"
+                            class="group mt-8 inline-flex items-center gap-2 font-semibold text-blue-400 transition-colors hover:text-blue-300">
+                            Vamos conversar
+                            <i class="ri-arrow-right-line transition-transform duration-300 group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
 
-                <br> Atualmente, estudo HTML, CSS, Tailwind CSS e JavaScript, desenvolvendo projetos práticos
-                para aprimorar minhas habilidades e evoluir constantemente. Meu objetivo é conquistar minha primeira
-                oportunidade como desenvolvedor Front-End, contribuindo com dedicação, criatividade e vontade de
-                aprender, criando soluções que ofereçam uma excelente experiência aos usuários.
+                    <div class="reveal grid gap-4 sm:grid-cols-2">
+                        <div class="rounded-2xl border border-white/10 bg-surface/50 p-6">
+                            <i class="ri-code-s-slash-line text-2xl text-blue-400"></i>
+                            <h3 class="mt-4 font-display font-bold text-white">Código limpo</h3>
+                            <p class="mt-2 text-sm leading-relaxed text-slate-400">Estrutura semântica, organizada e
+                                fácil de manter.</p>
+                        </div>
+                        <div class="rounded-2xl border border-white/10 bg-surface/50 p-6 sm:mt-8">
+                            <i class="ri-smartphone-line text-2xl text-blue-400"></i>
+                            <h3 class="mt-4 font-display font-bold text-white">Responsivo</h3>
+                            <p class="mt-2 text-sm leading-relaxed text-slate-400">Layouts que funcionam bem em
+                                qualquer tela.</p>
+                        </div>
+                        <div class="rounded-2xl border border-white/10 bg-surface/50 p-6">
+                            <i class="ri-flashlight-line text-2xl text-blue-400"></i>
+                            <h3 class="mt-4 font-display font-bold text-white">Performance</h3>
+                            <p class="mt-2 text-sm leading-relaxed text-slate-400">Páginas leves, rápidas e agradáveis
+                                de usar.</p>
+                        </div>
+                        <div class="rounded-2xl border border-white/10 bg-surface/50 p-6 sm:mt-8">
+                            <i class="ri-plant-line text-2xl text-blue-400"></i>
+                            <h3 class="mt-4 font-display font-bold text-white">Evolução</h3>
+                            <p class="mt-2 text-sm leading-relaxed text-slate-400">Aprendizado contínuo e vontade de
+                                crescer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- ================= CONTATO ================= -->
+        <section id="contato" class="px-6 py-24 lg:px-10">
+            <div class="reveal relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-white/10 bg-surface/60 px-6 py-16 text-center backdrop-blur-sm sm:px-12">
+                <div class="pointer-events-none absolute -top-24 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-blue-600/20 blur-[100px]"></div>
+
+                <div class="relative">
+                    <span class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">Contato</span>
+                    <h2 class="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">Vamos trabalhar juntos?</h2>
+                    <p class="mx-auto mt-4 max-w-xl text-slate-400">
+                        Estou em busca da minha primeira oportunidade como desenvolvedor Front-End. Fique à vontade
+                        para entrar em contato pelo canal que preferir.
+                    </p>
+
+                    <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+                        <a href="https://wa.me/5554996238578" target="_blank" rel="noopener"
+                            class="inline-flex items-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-5 py-3 font-medium text-emerald-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400/60 hover:bg-emerald-500/20">
+                            <i class="ri-whatsapp-line text-xl"></i> WhatsApp
+                        </a>
+                        <a href="mailto:juancarlosguaregua274@gmail.com"
+                            class="inline-flex items-center gap-2 rounded-xl border border-red-500/30 bg-red-500/10 px-5 py-3 font-medium text-red-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-red-400/60 hover:bg-red-500/20">
+                            <i class="ri-mail-fill text-xl"></i> E-mail
+                        </a>
+                        <a href="https://www.linkedin.com/in/carlos-guaregua/" target="_blank" rel="noopener"
+                            class="inline-flex items-center gap-2 rounded-xl border border-blue-500/30 bg-blue-500/10 px-5 py-3 font-medium text-blue-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-400/60 hover:bg-blue-500/20">
+                            <i class="ri-linkedin-box-fill text-xl"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/juancarlos-QW" target="_blank" rel="noopener"
+                            class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-3 font-medium text-slate-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10">
+                            <i class="ri-github-fill text-xl"></i> GitHub
+                        </a>
+                        <a href="assets/Juan-Carlos-CV.pdf" download
+                            class="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 font-semibold text-white shadow-glow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-blue-500">
+                            <i class="ri-file-pdf-2-fill text-xl"></i> Baixar CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="border-t border-white/5 px-6 py-10 lg:px-10">
+        <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-sm text-slate-500 sm:flex-row">
+            <p>© <span id="ano">2026</span> Juan Carlos. Todos os direitos reservados.</p>
+            <p class="flex items-center gap-1.5">
+                Feito com <i class="ri-heart-fill text-blue-500"></i> e Tailwind CSS
             </p>
         </div>
-
-    </section>
-
-    <div class="m-7 pt-7 text-center">
-        <h2 id="contato" class="text-white text-5xl font-bold">Contato</h2>
-    </div>
-    <section class="m-8 pt-8 px-2">
-
-        <div class="text-white flex flex-wrap gap-12 items-center justify-center">
-            <a class="bg-green-700 p-2 rounded-md inline-block transform duration-500 hover:scale-110"
-                href="https://wa.me/5554996238578"><i class="ri-whatsapp-line text-xl"></i> Whatsapp</a>
-            <a class="bg-red-600 p-2 rounded-md inline-block transform duration-500 hover:scale-110"
-                href="mailto:juancarlosguaregua274@gmail.com"><i class="ri-mail-fill text-xl"></i> E-mail</a>
-            <a class="bg-blue-600 p-2 rounded-md inline-block transform duration-500 hover:scale-110"
-                href="https://www.linkedin.com/in/carlos-guaregua/"><i class="ri-linkedin-box-fill text-xl"></i>
-                Linkedin</a>
-            <a class="bg-gray-700 p-2 rounded-md inline-block transform duration-500 hover:scale-110"
-                href="https://github.com/juancarlos-QW"><i class="ri-github-fill text-xl"></i> Git hud</a>
-            <a class="bg-gray-700 p-2 rounded-md inline-block transform duration-500 hover:scale-110"
-                href="assets/Juan-Carlos-CV.pdf" download><i class="ri-file-pdf-2-fill"></i> Baixar CV</a>
-        </div>
-    </section>
-
-    <footer class="bg-gray-950 p-8 mt-12">
-
-        <div class="text-gray-400 text-center">
-            © 2026 Juan Carlos. Todos os direitos reservados.
-        </div>
-
-
-
     </footer>
 
+    <script>
+        // ---- Menu mobile ----
+        const menuBtn = document.getElementById('menu-btn');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileMenu = document.getElementById('mobile-menu');
 
+        const closeMenu = () => {
+            mobileMenu.classList.add('hidden');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            menuBtn.setAttribute('aria-label', 'Abrir menu');
+            menuIcon.className = 'ri-menu-line';
+        };
 
+        menuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.toggle('hidden');
+            menuBtn.setAttribute('aria-expanded', String(isOpen));
+            menuBtn.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+            menuIcon.className = isOpen ? 'ri-close-line' : 'ri-menu-line';
+        });
+
+        document.querySelectorAll('.mobile-link').forEach((link) => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // ---- Sombra no header ao rolar ----
+        const header = document.getElementById('header');
+        const onScroll = () => header.classList.toggle('shadow-lg', window.scrollY > 20);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        // ---- Aparição dos elementos ao rolar ----
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+        document.querySelectorAll('.reveal').forEach((el, i) => {
+            el.style.transitionDelay = `${(i % 3) * 90}ms`;
+            revealObserver.observe(el);
+        });
+
+        // ---- Ano do rodapé ----
+        document.getElementById('ano').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
