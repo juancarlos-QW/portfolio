@@ -46,6 +46,21 @@
     mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
   }
 
+  /* Moldura de imagem dos cards.
+     O `overflow: hidden` sozinho nao recorta com precisao subpixel quando a
+     imagem filha ganha `scale` no hover (ela vira camada composta na GPU e
+     vaza ~1px pela borda, formando uma linha clara). O `clip-path` aplica o
+     recorte no compositor, sem vazamento. */
+  .media-frame {
+    isolation: isolate;
+    clip-path: inset(0);
+  }
+
+  .media-frame img {
+    display: block;
+    backface-visibility: hidden;
+  }
+
   /* Aparição dos elementos ao rolar a página */
   .reveal {
     opacity: 0;
