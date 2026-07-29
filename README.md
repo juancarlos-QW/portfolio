@@ -4,9 +4,7 @@
 
 https://juancarlos-qw.github.io/portfolio/
 
-## 📸 Preview
 
-![Preview](./images/)
 
 
 # 🖋️ Portfolio
