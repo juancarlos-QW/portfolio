@@ -2,7 +2,7 @@
 
 👉 Acesse o projeto:
 
-https://portfolio-self-xi-28.vercel.app/
+https://juancarlos-qw.github.io/portfolio/
 
 ## 📸 Preview
 
